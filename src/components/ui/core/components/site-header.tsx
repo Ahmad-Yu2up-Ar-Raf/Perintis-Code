@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 // import { useIsMobile } from "@/hooks/use-mobile";
 import {  House, LucideIcon, User2, WandSparkles } from "lucide-react";
 import Image from "next/image";
@@ -41,15 +41,15 @@ const navItems: Tp[] = [
 
 
 export const FloatingNav = () => {
-  const paths = usePathname()
+
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
-  const [delay, setDelay] = useState(true);
+
 // const isMobile = useIsMobile()
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current! - scrollYProgress.getPrevious()!;
  console.log(scrollYProgress.get())
 //  0.004306839420529118
       if (scrollYProgress.get() < 0.18) {
