@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../components/providers/Containers'
 import { Separator } from '../../fragments/separator'
-import { OptionItem } from '@/config/Team'
+import { OptionItem } from '@/types'
 
 const data : OptionItem[] = [
     {
