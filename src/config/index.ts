@@ -4,12 +4,12 @@ export const links = {
   sourceCode: "https://github.com/Ahmad-Yu2up-Ar-Raf",
   ownerName: "Ahmad Yusuf Ar-Rafi",
   ownerEmail: "yusufzolldyck@gmail.com",
-  appUrl: "https://nextframe.vercel.app", 
+  appUrl: "https://PerintisCode.vercel.app", 
   supportEmail: "ahmad.yusuf.pesat@gmail.com",
 } as const;
 
 export const appConfig = {
-  name: "NextFrame",
+  name: "Perintis Code",
   tagline: "Crafting Digital Excellence Through Code & Design",
   description: "Professional web development and UI/UX design services. We create stunning web applications, responsive websites, and exceptional user experiences tailored to elevate your business.",
   version: "1.0.0",
@@ -63,7 +63,7 @@ export const siteConfig: Metadata = {
     "developer website profesional",
     "desain website modern",
     "aplikasi web custom",
-    "NextFrame web services",
+    "Perintis Code web services",
     "professional web designer",
     "creative digital solutions",
   ] as Array<string>,
@@ -93,7 +93,7 @@ export const siteConfig: Metadata = {
     siteName: appConfig.name,
     images: [
       {
-        url: "/og-image.png", // Buat OG image 1200x630px dengan branding NextFrame
+        url: "/og-image.png", // Buat OG image 1200x630px dengan branding Perintis Code
         width: 1200,
         height: 630,
         alt: `${appConfig.name} - Professional Web Development & UI/UX Design Services`,
@@ -106,7 +106,7 @@ export const siteConfig: Metadata = {
     title: `${appConfig.name} - ${appConfig.tagline}`,
     description: appConfig.description,
     creator: "@yusuf", // Ganti dengan Twitter handle Anda
-    images: ["/twitter-image.png"], // Buat Twitter image 1200x600px dengan branding NextFrame
+    images: ["/twitter-image.png"], // Buat Twitter image 1200x600px dengan branding Perintis Code
   },
   
   robots: {
@@ -130,7 +130,7 @@ export const siteConfig: Metadata = {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-title": appConfig.name,
     "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "theme-color": "#2563eb", // Sesuaikan dengan brand color NextFrame
+    "theme-color": "#2563eb", // Sesuaikan dengan brand color Perintis Code
     "color-scheme": "light dark",
   },
   

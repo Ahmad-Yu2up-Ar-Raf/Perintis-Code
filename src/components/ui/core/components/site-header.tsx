@@ -23,12 +23,12 @@ type Tp = {
 const navItems: Tp[] = [
   {
     Name: "Home",
-    Link: "#hero",
+    Link: "/#hero",
     icon: House
   },
   {
-    Name: "Team",
-    Link: "#Team",
+    Name: "Prototype",
+    Link: "/prototype",
     icon: User2
   },
   {
@@ -61,6 +61,24 @@ export const FloatingNav = () => {
       }
     }
   });
+  const [visibleFooter, setVisibleFooter] = useState(false);
+
+// const isMobile = useIsMobile()
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      const direction = current! - scrollYProgress.getPrevious()!;
+ console.log(scrollYProgress.get())
+//  0.004306839420529118
+      if (scrollYProgress.get() > 0.18) {
+        setVisibleFooter(false);
+      } else {
+        if (direction > 0) {
+          setVisibleFooter(true);
+        } 
+      }
+    }
+  });
 // if(!isMobile && paths == "/")
   return (
     <>
@@ -76,7 +94,7 @@ export const FloatingNav = () => {
 
             <Image src={'/assets/logo.svg'} alt="logo" height={2}  width={5} className="  w-fit" />
             <span className="  uppercase 
-            font-poppin text-base">NextFrame</span>
+            font-poppin text-base">Perintis Code</span>
             </div>
         <motion.ul  
                 initial={{
@@ -126,11 +144,14 @@ export const FloatingNav = () => {
       </nav>
     </AnimatePresence>
       <nav
-
-        className="max-w-7xl  hidden md:flex justify-between w-full    fixed bottom-0 inset-x-0 mx-auto z-50  content-center  px-5 md:px-0  "
+      
+        className="  max-w-7xl hidden md:flex justify-between w-full    fixed bottom-0 inset-x-0 mx-auto z-50  content-center items-center  px-5 md:px-0  "
 
         
       >
+
+
+        
         <div className="relative items-center flex  w-full">
             <p className=" text-xs md:text-sm w-full pb-6 ">
 Business Proposal | Web Designer and application
@@ -140,6 +161,8 @@ Business Proposal | Web Designer and application
                 </div>
                 </div>
                 </nav>
+                   <div className="from-background pointer-events-none  fixed inset-x-0 bottom-0 h-1/4 w-full bg-gradient-to-t z-20 from-10%"></div>
+                 {/* <div className="from-background pointer-events-none fixed inset-x-0 top-0 h-1/5 w-full bg-gradient-to-b z-20 from-10%"></div> */}
     </>
   );
 

@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils"
-import React from "react"
+import React, { forwardRef } from "react"
 
 
-type ContainerProps = {
+type ContainerProps<T extends React.ElementType = 'section'> = {
   id: string
   children: React.ReactNode
   className?: string
@@ -12,31 +12,32 @@ type ContainerProps = {
   dataTestId?: string
   sectionName?: string
   container?: string
-  title?: string
+title? : string
+  as?: T
+} & React.ComponentPropsWithoutRef<T>
 
-} 
-
-export default function Container (
+const Container = forwardRef<HTMLElement, ContainerProps<any>>((
   {
     id,
     
     children,
     className,
-    maxW = true,
+    maxW = false,
     role,
-    
+    title,
     ariaLabel,
-    title ,
     dataTestId,
     sectionName,
-
-    container = "relative min-h-dvh h-full   w-full content-center",
+    as = 'section',
+    container = "container  min-h-dvh    w-full content-center",
     ...props
-  } : ContainerProps) {
-
+  }, 
+  ref
+) => {
+  const Component = as
 
   return (
-    <section
+  <Component
       id={id}
       className={cn(
         container, 
@@ -53,7 +54,6 @@ export default function Container (
         className={cn(
           "mx-auto      w-full",
           className,
-          maxW && 'max-w-7xl'
         )}
       >
         {title && (
@@ -66,9 +66,10 @@ export default function Container (
         )}
         {children}
       </main>
-    </section>
+    </Component>
   )
-}
+})
 
 Container.displayName = 'Container'
 
+export default Container;

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { fontVariables } from "@/lib/fonts";
 import "@/styles/globals.css";
-import { FloatingNav } from "@/components/ui/core/components/site-header";
 import { siteConfig } from "@/config";
+import Providers from "@/components/ui/core/layout/Provider";
 
 
 
@@ -16,12 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${fontVariables} font-poppin antialiased`}
       >
-        <FloatingNav/>
+       <Providers>
+
         {children}
+       </Providers>
       </body>
     </html>
   );

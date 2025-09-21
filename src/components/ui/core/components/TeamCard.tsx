@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../fragments/card'
-import { OptionItem } from '@/config/Team'
+import { OptionItem } from '@/types'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import fs from "node:fs/promises";
@@ -17,7 +17,7 @@ type componentsProps = {
 
 
 export default async function TeamCard({ DataTeam, className }: componentsProps) {
-      const src = `/assets/${DataTeam.name}.jpg`;
+      const src = `/assets/team/${DataTeam.name}.jpg`;
 
   const buffer = await fs.readFile(`./public${src}`);
 

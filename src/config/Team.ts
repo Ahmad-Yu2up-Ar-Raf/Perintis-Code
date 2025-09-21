@@ -1,14 +1,4 @@
-
-export interface OptionItem {
-  name: string;
-  role: string;
-
-  country?: string;
-}
-
-export interface GroupedOptions {
-  [key: string]: OptionItem[];
-}
+import { OptionItem } from "@/types";
 
 // Kategori Motor
 export const Team_data: OptionItem[] = [
@@ -19,6 +9,10 @@ export const Team_data: OptionItem[] = [
 
   
 ];
+
+
+
+
 
 export default {
  Team_data
