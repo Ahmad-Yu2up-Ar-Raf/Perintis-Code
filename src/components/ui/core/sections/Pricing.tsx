@@ -7,6 +7,7 @@ import NumberFlow from "@number-flow/react";
 import { Briefcase, CheckCheck, Database, Server } from "lucide-react";
 import { motion } from "motion/react";
 import { useRef, useState } from "react";
+import Link from "next/link";
 
 const plans = [
   {
@@ -100,7 +101,7 @@ export default function PricingSection4() {
 
   return (
     <div
-      className="px-10 pt-20 min-h-dvh  max-w-7xl  mx-auto relative container"
+      className="px-5 pt-20 min-h-dvh  max-w-7xl  mx-auto relative container"
       ref={pricingRef}
     >
       <article className="flex sm:flex-row flex-col sm:pb-0 pb-4 sm:items-center items-start justify-between">
@@ -146,7 +147,11 @@ export default function PricingSection4() {
         customVariants={revealVariants}
         className="grid md:grid-cols-3 gap-4 mx-auto  bg-gradient-to-b from-green-100 to-green-200 p-3 rounded-lg"
       >
-        {plans.map((plan, index) => (
+        {plans.map((plan, index) => {
+     const number : string = "628999069933"
+const massage : string = `Hi Perintis Code, I want to make a ${plan.name}  project with you!`
+const link : string = `https://api.whatsapp.com/send?phone=${number}&text=${massage}&type=phone_number&app_absent=0`
+          return(
           <TimelineContent
             as="div"
             key={plan.name}
@@ -255,8 +260,9 @@ export default function PricingSection4() {
                 </div>
               </CardContent>
               <CardFooter>
-                <button
-                  className={`w-full mb-6 p-4 text-xl rounded-xl ${
+                <Link
+                href={link}
+                  className={`w-full text-center mb-6 p-4 text-xl rounded-xl ${
                     plan.popular
                       ? "bg-gradient-to-t from-green-100 to-green-300 font-semibold shadow-lg shadow-green-500 border border-green-400 text-black"
                       : plan.buttonVariant === "outline"
@@ -265,11 +271,11 @@ export default function PricingSection4() {
                   }`}
                 >
                   {plan.buttonText}
-                </button>
+                </Link>
               </CardFooter>
             </Card>
           </TimelineContent>
-        ))}
+)})}
       </TimelineContent>
     </div>
   );

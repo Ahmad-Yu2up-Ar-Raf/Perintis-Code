@@ -14,7 +14,7 @@ function SolutionCard({ content, className, title } : ComponentProps) {
   return (
    <Card className={cn(" space-y-2 lg:text-center shadow-none sm:max-w-[18em] m-auto  border-0", className)}>
           <CardHeader className=" space-y-3  border-primary px-0  ">
-                <CardTitle className=" text-left md:text-center space-y-4 flex flex-col font-semibold leading-tight text-2xl text-foreground transition-colors">
+                <CardTitle className=" text-center space-y-4 flex flex-col font-semibold leading-tight text-2xl text-foreground transition-colors">
                       <span className=" tracking-tight font-bold ">
          {title}
                         </span>  
